@@ -26,6 +26,13 @@ Route::middleware(['auth','role:customer'])->group(function () {
     Route::delete('/keranjang/{product}', [CartController::class, 'destroy'])->name('cart.destroy'); 
 });
 
+Route::middleware(['auth','role:customer'])->group(function () { 
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index'); 
+    Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store'); 
+    Route::get('/pesanan', [CustomerOrderController::class, 'index'])->name('orders.index'); 
+    Route::get('/pesanan/{order}', [CustomerOrderController::class, 'show'])->name('orders.show'); 
+});
+
 Route::prefix('admin')->name('admin.')->middleware(['auth','role:admin'])->group(function () { 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index'); 
     Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store'); 
