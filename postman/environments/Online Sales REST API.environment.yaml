@@ -1,0 +1,10 @@
+name: Online Sales REST API
+values:
+  - key: 'base_url '
+    value: ''
+  - key: 'customer_token '
+    value: ''
+  - key: 'admin_token '
+    value: ''
+  - key: 'order_id '
+    value: ''
