@@ -1,0 +1,10 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/v1/checkout
+method: POST
+headers:
+  Content-Type: application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{customer_token }}"
+order: 7000

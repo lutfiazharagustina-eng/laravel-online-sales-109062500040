@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://127.0.0.1:8000/api/v1/admin/orders/4/status
+method: PATCH
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: '{"status": "completed"}'
+auth:
+  type: bearer
+  credentials:
+    token: "{{admin_token }}"
+order: 9000
